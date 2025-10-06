@@ -1,28 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ITF 2025</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <nav>
-            <p>68070204</p>
-            <h2>ITF Website</h2>
-            <p>Week 14</p>
-        </nav>
-        <div class="container">
-            <h2 id="my-title">Welcome to my ITF Website!</h2>
-            <img src="Cool.png" width="96" alt="Cool" />
-			<hr>
-			<div>
-				<label for="my_input">Enter any number:</label>
-				<input type="number" id="my_input" value="1">
-				<button type="button" onclick="calc(this.innerText)">+1</button>
-				<button type="button" onclick="calc(this.innerText)">-1</button>
-			</div>
-        </div>
-    </body>
-	<script src="script.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>68070204 — ITF Simple Bank</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Add Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="topbar" role="banner">
+      <div class="brand">
+        <h1>ITF Simple Bank</h1>
+        <p class="subtitle">
+          Student ID: <strong id="student-id">68070204</strong>
+        </p>
+      </div>
+      <div class="meta">
+        <span>Week 14</span>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="log-area">
+        <label for="log" class="visually-hidden">Activity log</label>
+        <textarea id="log" disabled aria-live="polite"></textarea>
+      </section>
+
+      <div class="layout">
+        <section class="main-content">
+          <article class="card">
+            <h3>Account Information</h3>
+            <div class="user-balance">
+              <label for="bal_acc">Account Balance:</label>
+              <input type="number" id="bal_acc" value="1000" min="0" />
+            </div>
+            <div class="user-balance">
+              <label for="bal_cash">Cash Balance:</label>
+              <input type="number" id="bal_cash" value="500" min="0" />
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Bank Operation</h3>
+            <label for="process_type">Operation Type:</label>
+            <select id="process_type">
+              <option value="deposit">Deposit</option>
+              <option value="withdraw">Withdraw</option>
+            </select>
+            <label for="process_amt">Amount:</label>
+            <input type="number" id="process_amt" value="1" min="1" />
+            <button id="process-btn" class="btn">
+              <span class="material-icons">arrow_forward</span> Proceed
+            </button>
+          </article>
+        </section>
+
+        <aside class="sidebar">
+          <article class="card">
+            <h3>Currency Converter</h3>
+            <div class="user-balance">
+              <label for="con_in">Input Balance:</label>
+              <input type="number" id="con_in" value="0" min="0" />
+            </div>
+            <div class="user-balance">
+              <label for="con_out">Output Balance:</label>
+              <input type="number" id="con_out" value="0" min="0" disabled />
+            </div>
+            <label for="con_intype">Conversion Type:</label>
+            <select id="con_intype">
+              <option value="usd">USD → THB</option>
+              <option value="thb">THB → USD</option>
+            </select>
+            <button id="convert-btn" class="btn">
+              <span class="material-icons">swap_horiz</span> Convert
+            </button>
+          </article>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 ITF Simple Bank. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
